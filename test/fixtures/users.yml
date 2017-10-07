@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bokete_id: MyString
+  nickname: MyString
+  sex: MyString
+  prefecture: MyString
+  birthday: 2017-10-07
+  email: MyString
+
+two:
+  bokete_id: MyString
+  nickname: MyString
+  sex: MyString
+  prefecture: MyString
+  birthday: 2017-10-07
+  email: MyString
