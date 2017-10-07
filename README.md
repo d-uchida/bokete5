@@ -1,24 +1,57 @@
-# README
+## users table
+|Column|type|options|
+|------|----|-------|
+|account_name|string|null: false|
+|nickname|string|null: false, unique: true|
+|sex|string||
+|prefecture|string||
+|birthday|date||
+### Association
+- has_many :bokes
+- has_many :odais
+- has_many :comments
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## bokes table
+|Column|type|options|
+|------|----|-------|
+|odai_id|integer|foreign_key: true|
+|user_id|integer|foreign_key: true|
+|text|string|null: false|
+|tag|string||
+|category|string|null: false|
 
-* Ruby version
+### Association
+- belongs_to :user
+- belongs_to :odai
+- has_many :comments
 
-* System dependencies
 
-* Configuration
+## odais table
+|Column|type|options|
+|------|----|-------|
+|user_id|integer|foreign_key: true|
+|img|string|null: false|
+|title|string||
+|tag|||
+|category|string|null: false|
+|authorization|string|null: false|
 
-* Database creation
+### Association
+- has_many :bokes
+- belongs_to :user
+- has_many :comments
 
-* Database initialization
 
-* How to run the test suite
+## comments table
+|Column|type|options|
+|------|----|-------|
+|user_id|integer|foreign_key: true|
+|star|string|null: false|
+|text|string||
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :boke
+- validates :comments, length: { in:1..60 }
+- belongs_to :user
