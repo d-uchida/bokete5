@@ -1,16 +1,3 @@
-## users table
-|Column|type|options|
-|------|----|-------|
-|account_name|string|null: false|
-|nickname|string|null: false, unique: true|
-|sex|string||
-|prefecture|string||
-|birthday|date||
-### Association
-- has_many :bokes
-- has_many :odais
-- has_many :comments
-
 
 ## bokes table
 |Column|type|options|
@@ -27,13 +14,27 @@
 - has_many :comments
 
 
+## comments table
+|Column|type|options|
+|------|----|-------|
+|user_id|integer|foreign_key: true|
+|star|integer|null: false|
+|text|string||
+
+### Association
+- belongs_to :boke
+- belongs_to :user
+- validates :star length: { in:1..3 }
+- validates :text, length: { in:1..60 }
+
+
 ## odais table
 |Column|type|options|
 |------|----|-------|
 |user_id|integer|foreign_key: true|
 |img|string|null: false|
 |title|string||
-|tag|||
+|tag|string||
 |category|string|null: false|
 |authorization|string|null: false|
 
@@ -43,15 +44,16 @@
 - has_many :comments
 
 
-## comments table
+## users table
 |Column|type|options|
 |------|----|-------|
-|user_id|integer|foreign_key: true|
-|star|string|null: false|
-|text|string||
-
-
+|bokete_id|string|null: false, unique: true|
+|nickname|string|null: false|
+|sex|string||
+|prefecture|string||
+|birthday|date||
+|email| string|null: false, unique: true|
 ### Association
-- belongs_to :boke
-- validates :comments, length: { in:1..60 }
-- belongs_to :user
+- has_many :bokes
+- has_many :odais
+- has_many :comments
