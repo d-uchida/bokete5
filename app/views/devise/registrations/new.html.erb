@@ -1,0 +1,30 @@
+<h2>ボケてアカウント新規登録</h2>
+ボケてでは色々な人に「ボケて」もらって「評価」してもらいたいと思っています。投稿したボケが、誰かの辛い時間を楽しい時間に変えることもできるし、面白い！と思うボケにコメントしたことがボケ投稿者をハッピーにすることが出来ます。
+
+ボケては完全に無料で利用でき、アカウントを作成すればPCサイトだけでなくスマホサイトやiOSアプリ、Androidアプリでも楽しめます。ボケてに登録してみんなを楽しい気持ちにしてください。
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :メールアドレス %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :メールアドレスの確認 %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :パスワード%>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "送信" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
