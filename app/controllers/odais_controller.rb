@@ -1,7 +1,13 @@
 class OdaisController < ApplicationController
 
   def index
-    @odais = Post.all.oreder(created_at: 'desc')
+    @odais = Odai.all.order(created_at: 'desc')
+  end
+
+  def new
+  end
+
+  def create
   end
 
 end
