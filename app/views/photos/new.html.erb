@@ -2,16 +2,25 @@
   手持ちの写真からお題を投稿する
 </div>
 
-<div class="">
+<!-- <div class="">
   <input type="img" name="img" value="1.ファイルを選択">
 </div>
 <div class="">
   <input type="submit" name="img" value="1.ファイルをアップロード">
-</div>
+</div> -->
 
-<% form_for :photo, url: photos_path do |f| %>
-  <div class="
-    <%= f.text_field :img %>
-    <%= f.submit %>
+<%= form_for :photo, url: photos_path do |f| %>
+  <div class="" >
+    <div class="">
+      <!-- <%= f.label :img do %>
+      <% end %> -->
+    <div class="">
+      <%= f.file_field :image, value: "1.ファイルを選択する" %>
+    </div>
+    </div>
+
+    <div class="">
+      <%= f.submit "2.ファイルをアップロード" %>
+    </div>
   </div>
 <% end %>
