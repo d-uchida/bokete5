@@ -1,6 +1,7 @@
 # config valid only for current version of Capistrano
 lock "3.9.1"
 
+set :linked_files, %w{ config/secrets.yml }
 set :application, 'bokete5'
 set :repo_url,  'git@github.com:d-uchida/bokete5.git'
 
