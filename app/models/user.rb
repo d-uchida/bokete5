@@ -7,4 +7,7 @@ class User < ApplicationRecord
          has_many :odais, through: :photos
          has_many :comments
          has_many :bokes
+         validates :account_name, {presence: true}
+         validates :sex, {presence: true}
+         validates :prefecture, {presence: true}
 end
