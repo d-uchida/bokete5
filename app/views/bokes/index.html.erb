@@ -1,4 +1,8 @@
-<%= @bokes %>
+
+<% @bokes.each do |boke| %>
+  <div class=""><%= image_tag boke.second_odai.photo.image %></div>
+  <div class=""><%= boke.text %></div>
+<% end %>
 
 <div class="">link</div>
-<%= link_to "お題", photos_path %>
+<%= link_to "お題", second_odais_path %>
