@@ -2,16 +2,16 @@ class BokesController < ApplicationController
   before_action :authenticate_user!
   def index
     @bokes = Boke.all.order(created_at: "desc")
-    @odais = SecondOdai.all
-    @photos = Photo.all
+    # @odais = Odai.all
+    # @photos = Photo.all
   end
   def new
-    @second_odai = SecondOdai.find(params[:second_odai_id])
+    @odai = Odai.find(params[:odai_id])
   end
   def create
-    @second_odai = SecondOdai.find(params[:second_odai_id])
+    @odai = Odai.find(params[:odai_id])
     @boke = Boke.new(
-      second_odai_id: @second_odai.id,
+      odai_id: @odai.id,
       # odai_id: @second_odai.id,
       user_id: current_user.id,
       text: odai_params[:text],
@@ -21,7 +21,7 @@ class BokesController < ApplicationController
     if @boke.save
       redirect_to root_path
     else
-      redirect_to new_second_odai_boke_path
+      redirect_to new_odai_boke_path
     end
   end
 

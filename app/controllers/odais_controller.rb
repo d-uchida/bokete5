@@ -1,15 +1,12 @@
 class OdaisController < ApplicationController
-
   def index
-    @odais = Odai.all.order(created_at: 'desc')
+    @odais = Odai.all.order(created_at: 'DESC')
   end
-
   def new
-    @photo = Photo.find(params[:photo_id])
+    @photo = Photo.order(params[:photo_id]).last
   end
-
   def create
-    @photo = Photo.find(params[:photo_id])
+    @photo = Photo.order(params[:photo_id]).last
     @odai = Odai.new(
       title: odai_params[:title],
       tag: odai_params[:tag],
@@ -19,9 +16,13 @@ class OdaisController < ApplicationController
       user_id: current_user.id,
       photo_id: @photo.id
     )
-    redirect_to new_photo_odai_path unless @odai.save
-    @odai.save
+    if @odai.save
+      redirect_to odais_path
+    else
+      redirect_to new_odai_path
+    end
   end
+
   private
   def odai_params
     params.require(:odai).permit(:title, :tag, :category, :right)

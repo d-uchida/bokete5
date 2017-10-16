@@ -40,11 +40,11 @@
 
 <div class="middle">
   <% @bokes.each do |boke| %>
-    <div class="boke_pic"><%= image_tag boke.second_odai.photo.image %></div>
+    <div class="boke_pic"><%= image_tag boke.odai.photo.image %></div>
     <div class=""><%= boke.text %></div>
   <% end %>
 </div>
 
 
 <div class="">link</div>
-<%= link_to "お題", second_odais_path %>
+<%= link_to "お題", odais_path %>

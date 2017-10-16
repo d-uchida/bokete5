@@ -4,11 +4,11 @@
 </div>
 
 <div class="">
-  <%= image_tag @second_odai.photo.image %>
+  <%= image_tag @odai.photo.image %>
 </div>
 
 
-<%= form_for :boke, url: second_odai_bokes_path do |f| %>
+<%= form_for :boke, url: odai_bokes_path do |f| %>
   <div class="field">
     <%= f.label :ボケテキスト %><br />
     <%= f.text_field :text, autofocus: true %>
