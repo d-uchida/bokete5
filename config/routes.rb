@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   resources :odais, only: [:index, :new, :create] do
     resources :bokes
   end
-  post '/second_odais/new' => 'second_odais#new'
-  post '/second_odais/:second_odai_id/bokes/new' => 'bokes#new'
   resources :photos, only: [:index, :new, :create, :upload]
 
 

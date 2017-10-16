@@ -12,7 +12,6 @@ class BokesController < ApplicationController
     @odai = Odai.find(params[:odai_id])
     @boke = Boke.new(
       odai_id: @odai.id,
-      # odai_id: @second_odai.id,
       user_id: current_user.id,
       text: odai_params[:text],
       tag: odai_params[:tag],
