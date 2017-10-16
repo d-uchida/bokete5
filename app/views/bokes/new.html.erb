@@ -1,0 +1,42 @@
+
+<div class="">
+  boke new
+</div>
+
+<div class="">
+  <%= image_tag @second_odai.photo.image %>
+</div>
+
+
+<%= form_for :boke, url: second_odai_bokes_path do |f| %>
+  <div class="field">
+    <%= f.label :ボケテキスト %><br />
+    <%= f.text_field :text, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :タグ %><br />
+    <%= f.text_field :tag, autofocus: true %>
+  </div>
+  <div class="field">
+    <div class="">カテゴリ(*必須)  </div>
+    <%= f.radio_button :category, value="バカ" %>
+    <%= f.label :バカ %>
+    <%= f.radio_button :category, value="シュール" %>
+    <%= f.label :シュール %>
+    <%= f.radio_button :category, value="お下劣" %>
+    <%= f.label :お下劣 %>
+    <%= f.radio_button :category, value="ブラック" %>
+    <%= f.label :ブラック %>
+    <%= f.radio_button :category, value="身内" %>
+    <%= f.label :身内 %>
+    <%= f.radio_button :category, value="例え" %>
+    <%= f.label :例え %>
+    <%= f.radio_button :category, value="その他" %>
+    <%= f.label :その他 %>
+  </div>
+  <div class="">
+    アダルトコンテンツ・下ねたを含むボケを投稿する場合はカテゴリーに「お下劣」を必ず指定してください
+  </div>
+
+  <%= f.submit value: "確認画面へ"%>
+<% end %>
