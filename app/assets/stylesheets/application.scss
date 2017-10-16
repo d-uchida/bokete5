@@ -1,0 +1,47 @@
+body {
+  padding-top: 40px;
+
+}
+.navbar {
+  margin: 0 auto;
+
+  margin: 0;
+  height: 45px;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  border-bottom: 2px solid gray;
+
+
+  &__logo{
+    float: left;
+    width: 135px;
+    height: 45px;
+    padding-right: 20px;
+  }
+  &__list{
+      list-style: none;
+
+    &--item{
+      float: left;
+      width: 28px;
+      height: 19px;
+      font-size: 14px;
+      padding: 0 14px;
+      font-weight: bold;
+
+      &__link{
+        text-decoration: none;
+        color: black;
+
+      }
+
+    }
+  }
+}
+.middle {
+  clear: left;
+  padding-top: 45px;
+
+}

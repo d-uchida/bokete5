@@ -1,8 +1,50 @@
 
-<% @bokes.each do |boke| %>
-  <div class=""><%= image_tag boke.second_odai.photo.image %></div>
-  <div class=""><%= boke.text %></div>
-<% end %>
+
+<div class="top-news">
+
+</div>
+<div class="main">
+  <div class="top-menue">
+
+  </div>
+  <div class="main">
+    <div class="main__index-title">
+      人気ボケ
+    </div>
+    <div class="main__index-title">
+      注目ボケ
+    </div>メイン
+    <div class="">
+      新着ボケ
+    </div>
+  </div>
+</div>
+<footer>フッター
+  <div class="">
+    ボケを見る
+  </div>
+  <div class="">
+    ボケを探す
+  </div>
+  <div class="">
+    ご利用について
+  </div>
+  <div class="">
+    会社情報
+  </div>
+</footer>
+
+
+
+
+
+<div class="middle">
+  <% @bokes.each do |boke| %>
+    <div class="boke_pic"><%= image_tag boke.second_odai.photo.image %></div>
+    <div class=""><%= boke.text %></div>
+  <% end %>
+</div>
+
 
 <div class="">link</div>
 <%= link_to "お題", second_odais_path %>
