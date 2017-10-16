@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(image: photo_params[:image], user_id: current_user.id)
     @photo.save
-    redirect_to new_photo_odai_path(@photo)
+    redirect_to new_second_odai_path(@photo)
     redirect_to new_photo_path unless @photo.save
   end
 
