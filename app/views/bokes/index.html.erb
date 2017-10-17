@@ -1,50 +1,160 @@
 
+  <div class="content">
+    <div class="content__main">
+      <div class="top-bar">
+        <div class="top-bar__menue">
+          <ul>
+            <li>トップ</li>
+            <li>注目</li>
+            <li>人気</li>
+            <li>コラボ</li>
+            <li>セレクト</li>
+            <li>ピックアップ</li>
+            <li>殿堂入り</li>
+          </ul>
+        </div>
+      </div>
+      <div class="content__main--index-title">
+        人気ボケ
+      </div>
+      <div class="content__main--top">
+        <%= image_tag @latest_boke.odai.photo.image %>
+        <%= @latest_boke.text %>
 
-<div class="top-news">
-
-</div>
-<div class="main">
-  <div class="top-menue">
-
-  </div>
-  <div class="main">
-    <div class="main__index-title">
-      人気ボケ
+      </div>
+      <div class="content__main--index-title">
+        注目ボケ
+      </div>
+      <div class="content__main--middle">
+        <div class="content__main--middle__boke-horizon">
+          1
+        </div>
+        <div class="content__main--middle__boke-horizon">
+          2
+        </div>
+        <div class="content__main--middle__boke-horizon">
+          3
+        </div>
+        <div class="content__main--middle__boke-horizon">
+          4
+        </div>
+        <div class="content__main--middle__boke-horizon">
+          5
+        </div>
+        <div class="content__main--middle__boke-horizon">
+          6
+        </div>
+        <div class="content__main--middle__more-button">
+          もっと見る
+        </div>
+      </div>
+      <div class="content__main--index-title">
+        新着ボケ
+      </div>
+      <div class="content__main--middle">
+        <div class="content__main--middle__boke-horizon">
+          1
+        </div>
+        <div class="content__main--middle__boke-horizon">
+          2
+        </div>
+        <div class="content__main--middle__boke-horizon">
+          3
+        </div>
+        <div class="content__main--middle__boke-horizon">
+          4
+        </div>
+        <div class="content__main--middle__boke-horizon">
+          5
+        </div>
+        <div class="content__main--middle__boke-horizon">
+          6
+        </div>
+        <div class="content__main--middle__more-button">
+          もっと見る
+        </div>
+      </div>
     </div>
-    <div class="main__index-title">
-      注目ボケ
-    </div>メイン
-    <div class="">
-      新着ボケ
+    <div class="content__right">
+      right content
+      <div class="">
+        殿堂入りボケ
+      </div>
+      <div class="">
+        ボケてキーワード
+      </div>
+      <div class="">
+        ボケてフェイスブックページ
+      </div>
+      <div class="">
+        友達〜人がいねしました
+      </div>
+      <div class="">
+        広告
+      </div>
+      <div class="">
+        ボケてからのお知らせ
+      </div>
+      <div class="">
+        最近のコメント
+      </div>
+      <div class="">
+        最近の評価されている職人
+      </div>
+      <div class="">
+        <img src="https://bokete.jp/images/app_banner_apple.png" alt="">
+      </div>
+      <div class="">
+        <img src="https://bokete.jp/images/app_banner_google.png" alt="">
+      </div>
     </div>
+    <footer class="footer">
+      <div class="footer__menue">
+        ボケを見る
+        <ul>
+          <li class="footer__menue--list">殿堂入り</li>
+          <li class="footer__menue--list">人気ボケ</li>
+          <li class="footer__menue--list">注目ボケ</li>
+          <li class="footer__menue--list">新着ボケ</li>
+          <li class="footer__menue--list">セレクト</li>
+          <li class="footer__menue--list">ピックアップ</li>
+        </ul>
+      </div>
+      <div class="footer__menue">
+        ボケを探す
+        <ul>
+          <li class="footer__menue--list">人気のタグから探す</li>
+          <li class="footer__menue--list">キーワードから探す</li>
+        </ul>
+      </div>
+      <div class="footer__menue">
+        ご利用について
+        <ul>
+          <li class="footer__menue--list">プライバシーポリシー</li>
+          <li class="footer__menue--list">ご利用規約</li>
+          <li class="footer__menue--list"ヘルプ・よくある質問></li>
+          <li class="footer__menue--list">お問合わせ</li>
+          <li class="footer__menue--list">広告掲載について</li>
+        </ul>
+      </div>
+      <div class="footer__menue">
+        会社情報
+        <ul>
+          <li class="footer__menue--list">運営会社</li>
+        </ul>
+      </div>
+      <div class="footer__menue--copy-right">
+        Copyright © ボケて（bokete）All rights reserved. 株式会社オモロキ
+      </div>
+    </footer>
   </div>
-</div>
-<footer>フッター
-  <div class="">
-    ボケを見る
-  </div>
-  <div class="">
-    ボケを探す
-  </div>
-  <div class="">
-    ご利用について
-  </div>
-  <div class="">
-    会社情報
-  </div>
-</footer>
 
 
 
 
 
-<div class="middle">
-  <% @bokes.each do |boke| %>
-    <div class="boke_pic"><%= image_tag boke.odai.photo.image %></div>
-    <div class=""><%= boke.text %></div>
-  <% end %>
-</div>
 
 
-<div class="">link</div>
+
+<div class="link">link</div>
 <%= link_to "お題", odais_path %>

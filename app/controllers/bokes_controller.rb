@@ -2,8 +2,8 @@ class BokesController < ApplicationController
   before_action :authenticate_user!
   def index
     @bokes = Boke.all.order(created_at: "desc")
-    # @odais = Odai.all
-    # @photos = Photo.all
+    @latest_boke = Boke.last
+
   end
   def new
     @odai = Odai.find(params[:odai_id])
