@@ -4,7 +4,6 @@ body {
 }
 .navbar {
   margin: 0 auto;
-
   margin: 0;
   height: 45px;
   width: 100%;
@@ -12,7 +11,8 @@ body {
   position: fixed;
   top: 0;
   border-bottom: 2px solid gray;
-
+  margin-right: auto;
+  margin-left: auto;
 
   &__logo{
     float: left;
@@ -22,7 +22,6 @@ body {
   }
   &__list{
       list-style: none;
-
     &--item{
       float: left;
       width: 28px;
@@ -30,18 +29,138 @@ body {
       font-size: 14px;
       padding: 0 14px;
       font-weight: bold;
-
       &__link{
         text-decoration: none;
         color: black;
-
       }
-
     }
   }
 }
 .middle {
   clear: left;
   padding-top: 45px;
+}
+$top-news-image-size: 20px;
+.top-news {
+  padding-top: 10px;
+  font-size: 12px;
+  &__current-place {
+    float: left;
+    &--image {
+      height: $top-news-image-size;
+      width: $top-news-image-size;
+      float: left;
+    }
+  }
+  &__right {
+    float: right;
+    &--item {
+      padding-right: 7px;
+      float: left;
+      list-style: none;
+    }
+    &--item span {
+      color: red;
+      font-weight: bold;
 
+    }
+  }
+}
+.top-bar {
+  clear: both;
+  &__menue {
+    ul {
+      li {
+        padding: 0 10px;
+        float: left;
+        list-style: none;
+      }
+    }
+  }
+}
+$overall-width: 1000px;
+$main-content-width: 660px;
+$right-content-width: calc(#{$overall-width} - #{$main-content-width});
+$button-height: 40px;
+$button-width: 300px;
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  width: $overall-width;
+  .content {
+    clear: both;
+    background-color: gray;
+    margin: 0 auto;
+    &__main {
+      .top-bar {
+        clear: both;
+        &__menue {
+          ul {
+            li {
+              padding: 0 10px;
+              float: left;
+              list-style: none;
+            }
+          }
+        }
+      }
+      width: $main-content-width;
+      float: left;
+      padding-bottom: 100px;
+      margin-bottom: 10px;
+      &--index-title {
+        clear: both;
+        border-bottom: 2px solid orange;
+      }
+      &--middle {
+        // height: 100%;
+        &__boke-horizon {
+          background-color: blue;
+          height: 200px;
+          width: 31%;
+          float: left;
+        }
+        &__more-button {
+          clear: both;
+          margin: 0 auto;
+          height: $button-height;
+          width: $button-width;
+          background-color: orange;
+          text-align: center;
+          color: white;
+          line-height: $button-height;
+        }
+      }
+    }
+  }
+  .content__right {
+    float: right;
+    width: $right-content-width;
+    background-color: skyblue;
+
+  }
+  .footer {
+    clear: both;
+    padding-top: 20px;
+    width: 1000px;
+    height: 240px;
+    background-color: blue;
+    &__menue {
+      float: left;
+      width: 24%;
+      &--list {
+        list-style: none;
+      }
+      &--copy-right {
+        clear: both;
+        background-color: gray;
+      }
+    }
+  }
+}
+
+
+.link {
+  clear: both;
 }
