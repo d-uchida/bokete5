@@ -1,26 +1,51 @@
 
   <div class="content">
+    <div class="content--top">
+        <ul>
+          <li>トップ</li>
+          <li>注目</li>
+          <li>人気</li>
+          <li>コラボ</li>
+          <li>セレクト</li>
+          <li>ピックアップ</li>
+          <li>殿堂入り</li>
+        </ul>
+    </div>
     <div class="content__main">
-      <div class="top-bar">
-        <div class="top-bar__menue">
-          <ul>
-            <li>トップ</li>
-            <li>注目</li>
-            <li>人気</li>
-            <li>コラボ</li>
-            <li>セレクト</li>
-            <li>ピックアップ</li>
-            <li>殿堂入り</li>
-          </ul>
-        </div>
-      </div>
       <div class="content__main--index-title">
         人気ボケ
       </div>
       <div class="content__main--top">
-        <%= image_tag @latest_boke.odai.photo.image %>
+        <div class="content__main--top__boke">
+          <div class="content__main--top__boke--photo">
+            <%= image_tag @latest_boke.odai.photo.image %>
+              <div class="content__main--top__boke--photo--content">
+                <div class="content__main--top__boke-photo--content__photoby">photo by odai by</div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="content__main--top__boke-text">
         <%= @latest_boke.text %>
-
+      </div>
+      <div class="content__main--top__meta">
+        <ul class="content__main--top__meta--info">
+          <li class="content__main--top__meta--info__list"><i class="fa fa-star" aria-hidden="true"></i></li>
+          <li class="content__main--top__meta--info__list">〜日前</li>
+          <li class="content__main--top__meta--info__list"><i class="fa fa-facebook-square" aria-hidden="true"></i></li>
+          <li class="content__main--top__meta--info__list"><i class="fa fa-twitter-square" aria-hidden="true"></i></li>
+          <li class="content__main--top__meta--info__list"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></li>
+          <li class="content__main--top__meta--info__list"><i class="fa fa-user-times" aria-hidden="true"></i></li>
+          <li class="content__main--top__meta--info__list"><i class="fa fa-external-link" aria-hidden="true"></i></li>
+        </ul>
+        <div class="content__main--top__meta--rating">
+          <div class="content__main--top__meta--rating__star"><i class="fa fa-star-o fa-lg boke-rating-star" aria-hidden="true"></i></div>
+          <div class="content__main--top__meta--rating__star"><i class="fa fa-star-o fa-lg boke-rating-star" aria-hidden="true"></i></div>
+          <div class="content__main--top__meta--rating__star"><i class="fa fa-star-o fa-lg boke-rating-star" aria-hidden="true"></i></div>
+        </div>
+      </div>
+      <div class="content__main--middle__more-button">
+        もっと見る
       </div>
       <div class="content__main--index-title">
         注目ボケ
@@ -108,46 +133,47 @@
         <img src="https://bokete.jp/images/app_banner_google.png" alt="">
       </div>
     </div>
-    <footer class="footer">
-      <div class="footer__menue">
-        ボケを見る
-        <ul>
-          <li class="footer__menue--list">殿堂入り</li>
-          <li class="footer__menue--list">人気ボケ</li>
-          <li class="footer__menue--list">注目ボケ</li>
-          <li class="footer__menue--list">新着ボケ</li>
-          <li class="footer__menue--list">セレクト</li>
-          <li class="footer__menue--list">ピックアップ</li>
-        </ul>
-      </div>
-      <div class="footer__menue">
-        ボケを探す
-        <ul>
-          <li class="footer__menue--list">人気のタグから探す</li>
-          <li class="footer__menue--list">キーワードから探す</li>
-        </ul>
-      </div>
-      <div class="footer__menue">
-        ご利用について
-        <ul>
-          <li class="footer__menue--list">プライバシーポリシー</li>
-          <li class="footer__menue--list">ご利用規約</li>
-          <li class="footer__menue--list"ヘルプ・よくある質問></li>
-          <li class="footer__menue--list">お問合わせ</li>
-          <li class="footer__menue--list">広告掲載について</li>
-        </ul>
-      </div>
-      <div class="footer__menue">
-        会社情報
-        <ul>
-          <li class="footer__menue--list">運営会社</li>
-        </ul>
-      </div>
-      <div class="footer__menue--copy-right">
-        Copyright © ボケて（bokete）All rights reserved. 株式会社オモロキ
-      </div>
-    </footer>
   </div>
+
+  <footer class="footer">
+    <div class="footer__menue">
+      ボケを見る
+      <ul>
+        <li class="footer__menue--list">殿堂入り</li>
+        <li class="footer__menue--list">人気ボケ</li>
+        <li class="footer__menue--list">注目ボケ</li>
+        <li class="footer__menue--list">新着ボケ</li>
+        <li class="footer__menue--list">セレクト</li>
+        <li class="footer__menue--list">ピックアップ</li>
+      </ul>
+    </div>
+    <div class="footer__menue">
+      ボケを探す
+      <ul>
+        <li class="footer__menue--list">人気のタグから探す</li>
+        <li class="footer__menue--list">キーワードから探す</li>
+      </ul>
+    </div>
+    <div class="footer__menue">
+      ご利用について
+      <ul>
+        <li class="footer__menue--list">プライバシーポリシー</li>
+        <li class="footer__menue--list">ご利用規約</li>
+        <li class="footer__menue--list"ヘルプ・よくある質問></li>
+        <li class="footer__menue--list">お問合わせ</li>
+        <li class="footer__menue--list">広告掲載について</li>
+      </ul>
+    </div>
+    <div class="footer__menue">
+      会社情報
+      <ul>
+        <li class="footer__menue--list">運営会社</li>
+      </ul>
+    </div>
+    <div class="footer__menue--copy-right">
+      Copyright © ボケて（bokete）All rights reserved. 株式会社オモロキ
+    </div>
+  </footer>
 
 
 
