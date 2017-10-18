@@ -27,6 +27,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'config'
 gem 'jp_prefecture'
+gem 'font-awesome-sass'
 # Use Redis adapter to run Action Cable in
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
