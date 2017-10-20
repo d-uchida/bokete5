@@ -20,7 +20,7 @@
           <div class="content__main--top__boke--photo">
             <%= image_tag @latest_boke.odai.photo.image %>
               <div class="content__main--top__boke--photo--content">
-                <div class="content__main--top__boke-photo--content__photoby">photo by odai by</div>
+                <div class="content__main--top__boke-photo--content__photoby">photo by <%= @latest_boke.odai.photo.user.nickname %> / odai by <%= @latest_boke.odai.user.nickname %></div>
               </div>
           </div>
         </div>
@@ -30,8 +30,8 @@
       </div>
       <div class="content__main--top__meta">
         <ul class="content__main--top__meta--info">
-          <li class="content__main--top__meta--info__list"><i class="fa fa-star" aria-hidden="true"></i></li>
-          <li class="content__main--top__meta--info__list">〜日前</li>
+          <li class="content__main--top__meta--info__stars"><i class="fa fa-star" aria-hidden="true"></i>星の数</li>
+          <li class="content__main--top__meta--info__date">〜日前</li>
           <li class="content__main--top__meta--info__list"><i class="fa fa-facebook-square" aria-hidden="true"></i></li>
           <li class="content__main--top__meta--info__list"><i class="fa fa-twitter-square" aria-hidden="true"></i></li>
           <li class="content__main--top__meta--info__list"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></li>

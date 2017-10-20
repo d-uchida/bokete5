@@ -6,9 +6,10 @@
 <div class="">
   <%= image_tag @odai.photo.image %>
 </div>
+<%= form_for :boke, url: preview_bokes_path do |f| %>
+  <%= f.hidden_field :odai_id, value: params[:odai_id] %>
 
 
-<%= form_for :boke, url: odai_bokes_path do |f| %>
   <div class="field">
     <%= f.label :ボケテキスト %><br />
     <%= f.text_field :text, autofocus: true %>

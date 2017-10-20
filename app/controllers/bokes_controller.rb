@@ -1,21 +1,32 @@
 class BokesController < ApplicationController
   before_action :authenticate_user!
+
   def index
     @bokes = Boke.all.order(created_at: "desc")
     @latest_boke = Boke.last
-
   end
   def new
     @odai = Odai.find(params[:odai_id])
   end
-  def create
-    @odai = Odai.find(params[:odai_id])
+  def preview
+    @odai = Odai.find(params[:boke][:odai_id])
     @boke = Boke.new(
       odai_id: @odai.id,
       user_id: current_user.id,
-      text: odai_params[:text],
-      tag: odai_params[:tag],
-      category: odai_params[:category]
+      text: boke_params[:text],
+      tag: boke_params[:tag],
+      category: boke_params[:category]
+    )
+    render :new if @boke.invalid?
+  end
+  def create
+    @odai = Odai.find(params[:boke][:odai_id])
+    @boke = Boke.new(
+      odai_id: @odai.id,
+      user_id: current_user.id,
+      text: boke_params[:text],
+      tag: boke_params[:tag],
+      category: boke_params[:category]
     )
     if @boke.save
       redirect_to root_path
@@ -24,10 +35,10 @@ class BokesController < ApplicationController
     end
   end
 
+
   private
-  def odai_params
+  def boke_params
     params.require(:boke).permit(:text, :tag, :category)
   end
-
 
 end
