@@ -1,12 +1,15 @@
 body {
   padding-top: 40px;
+  background-image: url(wood_pattern.png);
 
 }
+$overall-width: 1000px;
+
 .navbar {
   margin: 0 auto;
   margin: 0;
   height: 45px;
-  width: 100%;
+  width: $overall-width;
   background-color: white;
   position: fixed;
   top: 0;
@@ -21,17 +24,33 @@ body {
     padding-right: 20px;
   }
   &__list{
-      list-style: none;
-    &--item{
-      float: left;
-      width: 28px;
-      height: 19px;
-      font-size: 14px;
-      padding: 0 14px;
-      font-weight: bold;
-      &__link{
-        text-decoration: none;
-        color: black;
+    padding-top: 15px;
+    &--left {
+      &__item{
+        float: left;
+        width: 28px;
+        height: 19px;
+        font-size: 14px;
+        padding: 0 14px;
+        font-weight: bold;
+        &--link{
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+    &--right {
+      float: right;
+      &__item{
+        float: left;
+        height: 19px;
+        font-size: 14px;
+        padding: 0 14px;
+        font-weight: bold;
+        &--link{
+          text-decoration: none;
+          color: black;
+        }
       }
     }
   }
@@ -45,8 +64,10 @@ $top-news-image-size: 20px;
   padding-top: 10px;
   margin-bottom: 40px;
   font-size: 12px;
+  background-color: #fff;
   &__current-place {
     float: left;
+
     &--image {
       height: $top-news-image-size;
       width: $top-news-image-size;
@@ -80,7 +101,6 @@ $top-news-image-size: 20px;
     }
   }
 }
-$overall-width: 1000px;
 $main-content-width: 660px;
 $right-content-width: calc(#{$overall-width} - #{$main-content-width});
 $button-height: 34px;
@@ -90,6 +110,7 @@ $button-width: 400px;
   margin-right: auto;
   clear: both;
   width: $overall-width;
+  background-color: #fff;
   .content {
     clear: both;
     background-color: gray;

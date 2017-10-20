@@ -10,26 +10,33 @@
   <div class="container">
     <div class="navbar">
       <%= link_to image_tag('https://bokete.jp/images/logo.png', class: "navbar__logo"), root_path%>
-      <ul class="navbar__list">
-        <li class="navbar__list--item"><%= link_to "ボケ", bokes_path, {class: "navbar__list--item__link"} %></li>
-        <li class="navbar__list--item"><%= link_to "お題", odais_path, {class: "navbar__list--item__link"} %></li>
-        <li class="navbar__list--item"><%= link_to "職人", bokes_path, {class: "navbar__list--item__link"} %></li>
-      </ul>
-    </div>
-    <div class="top-news">
-      <div class="top-news__current-place">
-        <img class="top-news__current-place--image" src="https://bokete.jp/images/show_image.png" alt="">
-        <span>ボケて（bokete）トップ</span>
-      </div>
-      <div class="top-news__right">
-        <div class="top-news__right--item">ボケ投稿数</div>
-        <div class="top-news__right--item">お題投稿数</div>
-        <div class="top-news__right--item"><span>safe on<span></div>
+      <div class="navbar__list">
+        <div class="navbar__list--left">
+          <div class="navbar__list--left__item"><%= link_to "ボケ", bokes_path, {class: "navbar__list--left__item--link"} %></div>
+          <div class="navbar__list--left__item"><%= link_to "お題", odais_path, {class: "navbar__list--left__item--link"} %></div>
+          <div class="navbar__list--left__item"><%= link_to "職人", bokes_path, {class: "navbar__list--left__item--link"} %></div>
+        </div>
+        <div class="navbar__list--right">
+          <div class="navbar__list--right__item"><%= link_to current_user.nickname,  bokes_path, {class: "navbar__list--right__item--link"} %></div>
+          <div class="navbar__list--right__item"><%= link_to "マイページ", odais_path, {class: "navbar__list--right__item--link"} %></div>
+          <div class="navbar__list--right__item"><%= link_to "ヘルプ", bokes_path, {class: "navbar__list--right__item--link"} %></div>
+        </div>
       </div>
     </div>
   </div>
   <body>
     <div class="container">
+      <div class="top-news">
+        <div class="top-news__current-place">
+          <img class="top-news__current-place--image" src="https://bokete.jp/images/show_image.png" alt="">
+          <span>ボケて（bokete）トップ</span>
+        </div>
+        <div class="top-news__right">
+          <div class="top-news__right--item">ボケ投稿数</div>
+          <div class="top-news__right--item">お題投稿数</div>
+          <div class="top-news__right--item"><span>safe on<span></div>
+        </div>
+      </div>
       <%= yield %>
     </div>
   </body>
