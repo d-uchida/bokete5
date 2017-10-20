@@ -2,47 +2,46 @@
   お題の投稿
 </div>
 
-<%= form_for :odai, url: odais_path do |f| %>
-<div class="">
-  <%= image_tag @photo.image %>
-</div>
+<%= form_for :odai, url: preview_odais_path do |f| %>
+  <div class="">
+    <%= image_tag @photo.image %>
+  </div>
 
 
-<div class="field">
-  <%= f.label :タイトル %><br />
-  <%= f.text_field :title, autofocus: true %>
-</div>
-<div class="field">
-  <%= f.label :タグ %><br />
-  <%= f.text_field :tag, autofocus: true %>
-</div>
-<div class="field">
-  <div class="">カテゴリ(*必須)  </div>
-  <%= f.radio_button :category, value="人物" %>
-  <%= f.label :人物 %>
-  <%= f.radio_button :category, value="人物2人以上" %>
-  <%= f.label :人物2人以上 %>
-  <%= f.radio_button :category, value="動物" %>
-  <%= f.label :動物 %>
-  <%= f.radio_button :category, value="風景" %>
-  <%= f.label :風景 %>
-  <%= f.radio_button :category, value="イラスト" %>
-  <%= f.label :イラスト %>
-  <%= f.radio_button :category, value="その他" %>
-  <%= f.label :その他 %>
+  <div class="field">
+    <%= f.label :タイトル %><br />
+    <%= f.text_field :title, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :タグ %><br />
+    <%= f.text_field :tag, autofocus: true %>
+  </div>
+  <div class="field">
+    <div class="">カテゴリ(*必須)  </div>
+    <%= f.radio_button :category, value="人物" %>
+    <%= f.label :人物 %>
+    <%= f.radio_button :category, value="人物2人以上" %>
+    <%= f.label :人物2人以上 %>
+    <%= f.radio_button :category, value="動物" %>
+    <%= f.label :動物 %>
+    <%= f.radio_button :category, value="風景" %>
+    <%= f.label :風景 %>
+    <%= f.radio_button :category, value="イラスト" %>
+    <%= f.label :イラスト %>
+    <%= f.radio_button :category, value="その他" %>
+    <%= f.label :その他 %>
+  </div>
+  <div class="field">
+    <div class="">この画像はあなたが著作権または投稿に必要な権利を有しているものですか？</div>
+    <%= f.radio_button :right, value="はい" %>
+    <%= f.label :はい %>
+    <%= f.radio_button :right, value="いいえ" %>
+    <%= f.label :いいえ %>
+  </div>
 
-</div>
-<div class="field">
-  <div class="">この画像はあなたが著作権または投稿に必要な権利を有しているものですか？</div>
-  <%= f.radio_button :right, value="はい" %>
-  <%= f.label :はい %>
-  <%= f.radio_button :right, value="いいえ" %>
-  <%= f.label :いいえ %>
-</div>
+  <div class="">
+     著作権・肖像権の侵害に当たる画像や暴力的、卑猥な画像の投稿は禁止しております。 詳しくは利用規約をご覧ください。
+  </div>
 
-<div class="">
-   著作権・肖像権の侵害に当たる画像や暴力的、卑猥な画像の投稿は禁止しております。 詳しくは利用規約をご覧ください。
-</div>
-
-<%= f.submit value: "確認画面へ"%>
+  <%= f.submit value: "確認画面へ"%>
 <% end %>
