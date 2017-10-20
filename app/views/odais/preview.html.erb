@@ -1,0 +1,35 @@
+<div class="">
+  お題の確認
+</div>
+
+<%= form_for :odai, url: odais_path do |f| %>
+  <%= f.hidden_field :title %>
+  <%= f.hidden_field :tag %>
+  <%= f.hidden_field :category %>
+  <%= f.hidden_field :right %>
+
+  <div class="">
+    <%= image_tag @odai.photo.image %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :タイトル %><br />
+    <%= @odai.title %>
+  </div>
+  <div class="field">
+    <%= f.label :タグ %><br />
+    <%= @odai.tag%>
+  </div>
+  <div class="field">
+    <div class="">カテゴリ(*必須)  </div>
+      <%= @odai.category %>
+  </div>
+
+  <div class="">
+     著作権・肖像権の侵害に当たる画像や暴力的、卑猥な画像の投稿は禁止しております。
+  </div>
+
+  <%= f.submit '戻る', name: 'back'%>
+  <%= f.submit "投稿する" %>
+<% end %>
