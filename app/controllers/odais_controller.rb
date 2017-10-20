@@ -28,7 +28,7 @@ class OdaisController < ApplicationController
       photo_id: @photo.id
     )
     if @odai.save
-      redirect_to odais_path
+      redirect_to done_odais_path
     else
       redirect_to new_odai_path
     end

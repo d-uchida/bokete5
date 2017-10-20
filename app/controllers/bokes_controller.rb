@@ -29,7 +29,7 @@ class BokesController < ApplicationController
       category: boke_params[:category]
     )
     if @boke.save
-      redirect_to root_path
+      redirect_to done_bokes_path
     else
       redirect_to new_odai_boke_path
     end
