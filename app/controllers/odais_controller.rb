@@ -5,6 +5,18 @@ class OdaisController < ApplicationController
   def new
     @photo = Photo.order(params[:photo_id]).last
   end
+  def preview
+    @photo = Photo.order(params[:photo_id]).last
+    @odai = Odai.new(
+          title: odai_params[:title],
+          tag: odai_params[:tag],
+          category: odai_params[:category],
+          right: odai_params[:right],
+          user_id: current_user.id,
+          photo_id: @photo.id
+    )
+    render :new if @odai.invalid?
+  end
   def create
     @photo = Photo.order(params[:photo_id]).last
     @odai = Odai.new(
@@ -12,7 +24,6 @@ class OdaisController < ApplicationController
       tag: odai_params[:tag],
       category: odai_params[:category],
       right: odai_params[:right],
-      title: odai_params[:title],
       user_id: current_user.id,
       photo_id: @photo.id
     )
@@ -27,5 +38,4 @@ class OdaisController < ApplicationController
   def odai_params
     params.require(:odai).permit(:title, :tag, :category, :right)
   end
-
 end
