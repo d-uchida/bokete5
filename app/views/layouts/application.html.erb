@@ -17,8 +17,13 @@
           <div class="navbar__list--left__item"><%= link_to "職人", bokes_path, {class: "navbar__list--left__item--link"} %></div>
         </div>
         <div class="navbar__list--right">
-          <div class="navbar__list--right__item"><%= link_to current_user.nickname,  bokes_path, {class: "navbar__list--right__item--link"} %></div>
-          <div class="navbar__list--right__item"><%= link_to "マイページ", odais_path, {class: "navbar__list--right__item--link"} %></div>
+          <% if user_signed_in? %>
+            <div class="navbar__list--right__item"><%= link_to current_user.nickname,  bokes_path, {class: "navbar__list--right__item--link"} %></div>
+            <div class="navbar__list--right__item"><%= link_to "マイページ", odais_path, {class: "navbar__list--right__item--link"} %></div>
+          <% else %>
+            <div class="navbar__list--right__item"><%= link_to "新規登録",  new_user_registration_path, {class: "navbar__list--right__item--link"} %></div>
+            <div class="navbar__list--right__item"><%= link_to "ログイン", new_user_session_path, {class: "navbar__list--right__item--link"} %></div>
+          <% end %>
           <div class="navbar__list--right__item"><%= link_to "ヘルプ", bokes_path, {class: "navbar__list--right__item--link"} %></div>
         </div>
       </div>
