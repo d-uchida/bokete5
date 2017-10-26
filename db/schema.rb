@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171016134353) do
+ActiveRecord::Schema.define(version: 20171026024844) do
 
   create_table "bokes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "odai_id"
@@ -62,15 +62,17 @@ ActiveRecord::Schema.define(version: 20171016134353) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "datetime"
     t.string "confirmation_token"
-    t.string "confirmed_at"
-    t.string "confirmation_sent_at"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.text "profile"
     t.string "nickname", default: "", null: false
     t.string "sex", default: "", null: false
     t.string "prefecture", default: "", null: false
     t.datetime "birthday"
+    t.string "email_confirmation"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
