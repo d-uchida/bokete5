@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          has_many :photos
-         has_many :odais, through: :photos
+         has_many :odais
          has_many :comments
          has_many :bokes
          validates :account_name, {presence: true}
