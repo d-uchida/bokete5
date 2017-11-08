@@ -15,23 +15,25 @@
       <div class="content__main--index-title">
         人気ボケ
       </div>
-      <div class="content__main--top">
-        <div class="content__main--top__boke">
-          <div class="content__main--top__boke--photo">
-            <%= image_tag @latest_boke.odai.photo.image %>
-              <div class="content__main--top__boke--photo--content">
-                <div class="content__main--top__boke-photo--content__photoby">photo by <%= @latest_boke.odai.photo.user.nickname %> / odai by <%= @latest_boke.odai.user.nickname %></div>
-              </div>
+      <% if @latest_boke.present? %>
+        <div class="content__main--top">
+          <div class="content__main--top__boke">
+            <div class="content__main--top__boke--photo">
+              <%= image_tag @latest_boke.odai.photo.image %>
+                <div class="content__main--top__boke--photo--content">
+                  <div class="content__main--top__boke-photo--content__photoby">photo by <%= @latest_boke.odai.photo.user.nickname %> / odai by <%= @latest_boke.odai.user.nickname%></div>
+                </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="content__main--top__boke-text">
-        <%= @latest_boke.text %>
-      </div>
+        <div class="content__main--top__boke-text">
+          <%= @latest_boke.text %>
+        </div>
+      <% end %>
       <div class="content__main--top__meta">
         <ul class="content__main--top__meta--info">
           <li class="content__main--top__meta--info__stars"><i class="fa fa-star" aria-hidden="true"></i>星の数</li>
-          <li class="content__main--top__meta--info__date">〜日前</li>
+          <li class="content__main--top__meta--info__date"><%= ((@now - @latest_boke.created_at)/60).to_i %>分くらい前</li>
           <li class="content__main--top__meta--info__list"><i class="fa fa-facebook-square" aria-hidden="true"></i></li>
           <li class="content__main--top__meta--info__list"><i class="fa fa-twitter-square" aria-hidden="true"></i></li>
           <li class="content__main--top__meta--info__list"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></li>
@@ -101,31 +103,14 @@
       </div>
     </div>
     <div class="content__right">
-      right content
+      <img src="https://bokete.jp/images/legend_banner.png" alt="">
+      <img src="https://bokete.jp/images/keyword_banner.png" alt="">
+      <img src="https://bokete-photo-gamma.s3.amazonaws.com/images/side/banner_bde6709188ea4ba1585d8ea46b93ed7d.jpg" alt="">
+      <img src="https://bokete.jp/images/news_title.png" alt="">
       <div class="">
         殿堂入りボケ
       </div>
-      <div class="">
-        ボケてキーワード
-      </div>
-      <div class="">
-        ボケてフェイスブックページ
-      </div>
-      <div class="">
-        友達〜人がいねしました
-      </div>
-      <div class="">
-        広告
-      </div>
-      <div class="">
-        ボケてからのお知らせ
-      </div>
-      <div class="">
-        最近のコメント
-      </div>
-      <div class="">
-        最近の評価されている職人
-      </div>
+
       <div class="">
         <img src="https://bokete.jp/images/app_banner_apple.png" alt="">
       </div>

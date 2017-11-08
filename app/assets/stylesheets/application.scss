@@ -110,7 +110,7 @@ $button-width: 400px;
   margin-right: auto;
   clear: both;
   width: $overall-width;
-  background-color: #fff;
+  background-color: lightgray;
   .content {
     clear: both;
     background-color: gray;
@@ -131,6 +131,7 @@ $button-width: 400px;
       margin-top: 30px;
       padding-bottom: 100px;
       margin-bottom: 10px;
+      background-color: #fff;
 
       &--index-title {
         clear: both;
@@ -142,6 +143,9 @@ $button-width: 400px;
           text-align: center;
           &--photo{
             display: inline-block;
+            img {
+              border: 1px solid #999;
+            }
             &--content {
               text-align: right;
               font-size: 13px;
@@ -214,8 +218,10 @@ $button-width: 400px;
   .content__right {
     float: right;
     width: $right-content-width;
-    background-color: skyblue;
     margin-top: -22px;
+    img {
+      width: 298px;
+    }
   }
   .footer {
     clear: both;
