@@ -4,6 +4,9 @@ class BokesController < ApplicationController
   def index
     @bokes = Boke.all.order(created_at: "desc")
     @latest_boke = Boke.last
+    @latest_odai = Odai.last
+    @now = Time.now
+    
   end
   def new
     @odai = Odai.find(params[:odai_id])
